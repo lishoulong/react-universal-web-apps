@@ -32,7 +32,7 @@ var webpackConfig = {
     module: {
         preLoaders: [
             {
-                test: /\.js$/,
+                test: /\.(js)|(jsx)$/,
                 include: [
                     APP_FOLDER
                 ],
@@ -41,15 +41,11 @@ var webpackConfig = {
         ],
         loaders: [
             {
-                test: /\.js$/,
+                test: /\.(js|jsx)$/,
                 include: [
                     APP_FOLDER
                 ],
-                loader: 'babel',
-                query: {
-                    compact: false,
-                    cacheDirectory: true
-                }
+                loader: 'babel-loader'
             }
         ]        
     },
